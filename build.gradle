@@ -7,7 +7,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:4.0.2'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
     }
 }
@@ -20,14 +20,13 @@ allprojects {
 }
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 30
 
     version VERSION_NAME as String // needs for bintray
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode VERSION_CODE as int
         versionName version
         archivesBaseName = ARTIFACT_NAME as String
@@ -53,15 +52,16 @@ dependencies {
 
     // noinspection GradleDependency
     implementation 'com.startapp:inapp-sdk:[4.6,5)'
-    implementation('com.mopub:mopub-sdk:5.11.1@aar') {
+    // noinspection GradleDependency
+    implementation('com.mopub:mopub-sdk:[5.13,6)@aar') {
         transitive = true
     }
 
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 
     testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
 
 apply from: 'create_pom.gradle'

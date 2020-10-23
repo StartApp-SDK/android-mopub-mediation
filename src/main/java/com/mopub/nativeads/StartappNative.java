@@ -25,8 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.mopub.common.logging.MoPubLog;
-import com.mopub.mobileads.StartappConfig;
-import com.mopub.mobileads.StartappExtras;
+import com.mopub.mobileads.StartappAdapter;
 import com.startapp.sdk.ads.nativead.NativeAdDetails;
 import com.startapp.sdk.ads.nativead.NativeAdDisplayListener;
 import com.startapp.sdk.ads.nativead.NativeAdInterface;
@@ -46,14 +45,11 @@ import static com.mopub.common.logging.MoPubLog.AdapterLogEvent.LOAD_FAILED;
 import static com.mopub.common.logging.MoPubLog.AdapterLogEvent.LOAD_SUCCESS;
 import static com.mopub.common.logging.MoPubLog.AdapterLogEvent.SHOW_FAILED;
 import static com.mopub.common.logging.MoPubLog.AdapterLogEvent.SHOW_SUCCESS;
-import static com.mopub.mobileads.StartappConfig.AD_NETWORK_ID;
+import static com.mopub.mobileads.StartappAdapter.AD_NETWORK_ID;
 
 @Keep
 public class StartappNative extends CustomEventNative {
     private static final String LOG_TAG = StartappNative.class.getSimpleName();
-
-    @NonNull
-    private final StartappConfig configuration = new StartappConfig();
 
     @Override
     protected void loadNativeAd(
@@ -62,12 +58,11 @@ public class StartappNative extends CustomEventNative {
             @NonNull Map<String, Object> localExtras,
             @NonNull Map<String, String> serverExtras
     ) {
-        final StartappExtras extras = new StartappExtras(localExtras, serverExtras, true);
+        final StartappAdapter.Extras extras = new StartappAdapter.Extras(localExtras, serverExtras, true);
 
-        StartappConfig.initializeSdkIfNeeded(context, extras.getAppId());
+        StartappAdapter.initializeSdkIfNeeded(context, extras.getAppId());
 
         new StartappStaticNativeAd().loadAd(context, extras, listener);
-        configuration.setCachedInitializationParameters(context, serverExtras);
     }
 
     static class StartappStaticNativeAd extends StaticNativeAd {
@@ -152,7 +147,7 @@ public class StartappNative extends CustomEventNative {
 
         void loadAd(
                 @NonNull final Context context,
-                @NonNull StartappExtras extras,
+                @NonNull StartappAdapter.Extras extras,
                 @NonNull final CustomEventNativeListener listener
         ) {
             final StartAppNativeAd startappAds = new StartAppNativeAd(context);
