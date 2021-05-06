@@ -44,7 +44,7 @@ All parameters in the "custom event data" field are optional except the "startap
 You can also pass these parameters from your code using mopub's "setLocalExtras". But be aware that every parameter from "custom event data" will override same parameter which is set locally
 
 Fullscreen example:
-```
+```java
 final Map<String, Object> extras = new StartappExtras.Builder()
 	.setAdTag("interstitialTagFromAdRequest")
 	.setInterstitialMode(StartappExtras.Mode.OFFERWALL)
@@ -57,7 +57,7 @@ interstitial.load();
 ```
 
 Banner example:
-```
+```java
 final Map<String, Object> extras = new StartappExtras.Builder()
 	.setAdTag("bannerTagFromAdRequest")
 	.enable3DBanner()
@@ -70,7 +70,7 @@ bannerView.loadAd();
 ```
 
 Rewarded example:
-```
+```java
 final StartappAdapter.Extras.LocalExtras extras = new StartappAdapter.Extras.Builder()
                 .setAdTag("rewardedTagFromAdRequest")
                 .muteVideo()
@@ -82,7 +82,7 @@ MoPubRewardedVideos.loadRewardedVideo(getResources().getString(R.string.rewarded
 ```
 
 Native example:
-```
+```java
 final Map<String, Object> extras = new StartappExtras.Builder()
     .setAdTag("nativeTagFromAdRequest")
     .setMinCPM(0.01)
