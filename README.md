@@ -65,8 +65,7 @@ final Map<String, Object> extras = new StartappExtras.Builder()
 	.toMap();
 
 bannerView.setLocalExtras(extras);
-bannerView.loadAd(); 
-}
+bannerView.loadAd();
 ```
 
 Rewarded example:
@@ -78,7 +77,6 @@ final StartappAdapter.Extras.LocalExtras extras = new StartappAdapter.Extras.Bui
                 .toMap();
 				
 MoPubRewardedVideos.loadRewardedVideo(getResources().getString(R.string.rewardedId), extras);
-}
 ```
 
 Native example:
@@ -91,7 +89,6 @@ final Map<String, Object> extras = new StartappExtras.Builder()
     .toMap();
 
 moPubNative.setLocalExtras(extras);
-moPubNative.makeRequest(requestParameters); 
-}
+moPubNative.makeRequest(requestParameters);
 ```
 #### If you need additional assistance you can take a look on our app example which works with this mediation adapter [here](https://github.com/StartApp-SDK/android-mopub-mediation-sample)
