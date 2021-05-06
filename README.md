@@ -16,7 +16,7 @@ Otherwise, please start by reading the following articles for a walk-through exp
 ### 3. Integrating the Start.io <-> MoPub Mediation Adapter
 The easiest way is to use maven depencency, just add to your Gradle file following line
 ```
-dependencies{ 
+dependencies { 
     implementation 'com.startapp:inapp-sdk:4.+'
     implementation 'com.startapp:mopub-mediation:3.+'
 }
