@@ -44,9 +44,9 @@ import com.startapp.sdk.ads.nativead.NativeAdPreferences;
 import com.startapp.sdk.adsbase.Ad;
 import com.startapp.sdk.adsbase.StartAppAd;
 import com.startapp.sdk.adsbase.StartAppSDK;
-import com.startapp.sdk.adsbase.VideoListener;
 import com.startapp.sdk.adsbase.adlisteners.AdDisplayListener;
 import com.startapp.sdk.adsbase.adlisteners.AdEventListener;
+import com.startapp.sdk.adsbase.adlisteners.VideoListener;
 import com.startapp.sdk.adsbase.model.AdPreferences;
 
 import java.util.HashMap;
@@ -117,9 +117,7 @@ public class StartappAdapter extends BaseAd {
             SIZE100X100,
             SIZE150X150,
             SIZE340X340,
-            SIZE1200X628,
-            SIZE320X480,
-            SIZE480X320
+            SIZE1200X628
         }
 
         @NonNull
