@@ -13,11 +13,10 @@ Otherwise, please start by reading the following articles for a walk-through exp
 1. Login into your [Start.io developer's account](https://portal.start.io/#/signin)
 1. Add your application and get its App ID
 
-### 3. Integrating the Start.io <-> MoPub Mediation Adapter
+### 3. Integrating the MoPub to Start.io mediation adapter
 The easiest way is to use maven depencency, just add to your Gradle file following line
-```
-dependencies { 
-    implementation 'com.startapp:inapp-sdk:4.+'
+```groovy
+dependencies {
     implementation 'com.startapp:mopub-mediation:3.+'
 }
 ```
